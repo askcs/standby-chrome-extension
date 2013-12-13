@@ -1,0 +1,36 @@
+extends layout
+
+
+block navbar
+  header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button',
+          data-toggle='collapse',
+          data-target='.bs-navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='../') Angular-Seed-RequireJS
+      nav.collapse.navbar-collapse.bs-navbar-collapse(role='navigation')
+        ul.nav.navbar-nav
+          li
+            a(href='#/partial1') Partial1
+          li
+            a(href='#/partial2') Partial2
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='#/home') Home
+
+
+block footer
+  // footer
+  footer
+    .container
+      p.text-muted.credit.pull-left
+        | Some footer text
+        a(href='#')  and a link
+      p.text-muted.pull-right(style='margin-top:20px')
+        | {{ 'Current version is v%VERSION%. Released: %RELEASED%' | interpolate }}
+  // end footer

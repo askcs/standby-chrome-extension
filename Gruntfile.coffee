@@ -27,7 +27,7 @@ module.exports = (grunt) ->
             name: "<%= meta.name %>"
             description: "<%= meta.description %>"
         files:
-          ".tmp/popup.html": ["<%= paths.app %>/popup.jade"]
+          ".tmp/index.html": ["<%= paths.app %>/index.jade"]
       views:
         options:
           pretty: true
@@ -300,7 +300,7 @@ module.exports = (grunt) ->
       dist:
         options:
           removeCommentsFromCDATA: false
-          collapseWhitespace: true
+          collapseWhitespace: false
           collapseBooleanAttributes: true
           removeAttributeQuotes: false
           removeRedundantAttributes: true
@@ -335,8 +335,8 @@ module.exports = (grunt) ->
         ]
       styles:
         expand: true
-        cwd: "<%= paths.app %>/styles"
-        dest: ".tmp/styles/"
+        cwd: ".tmp/styles/"
+        dest: "<%= paths.dist %>/styles"
         src: "{,*/}*.css"
 
 
@@ -521,6 +521,7 @@ module.exports = (grunt) ->
     "replace"
     "coffee:build"
     "clean:coffee"
+    "copy:styles"
     "compress"
   ]
 
