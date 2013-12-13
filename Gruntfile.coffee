@@ -145,6 +145,13 @@ module.exports = (grunt) ->
           ]
         ]
       server: ".tmp"
+      coffee:
+        files: [
+          src: [
+            "<%= paths.dist %>/*.coffee"
+            "<%= paths.dist %>/**/*.coffee"
+          ]
+        ]
 
 
     jshint:
@@ -181,6 +188,14 @@ module.exports = (grunt) ->
           cwd: "<%= paths.app %>/scripts"
           src: "{,*/}*.coffee"
           dest: ".tmp/scripts"
+          ext: ".js"
+        ]
+      build:
+        files: [
+          expand: true
+          cwd: "<%= paths.dist %>/scripts"
+          src: "{,*/}*.coffee"
+          dest: "dist/scripts"
           ext: ".js"
         ]
       testUnit:
@@ -231,8 +246,8 @@ module.exports = (grunt) ->
           src: [
             "<%= paths.dist %>/scripts/main.js"
             "<%= paths.dist %>/styles/{,*/}*.css"
-            "<%= paths.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}"
-            "<%= paths.dist %>/styles/fonts/*"
+            #"<%= paths.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}"
+            #"<%= paths.dist %>/styles/fonts/*"
           ]
 
 
@@ -496,7 +511,7 @@ module.exports = (grunt) ->
     "imagemin"
     "svgmin"
     "htmlmin"
-    "copy"
+    "copy:dist"
     "autoprefixer"
     "ngmin"
     # "cssmin"
@@ -504,6 +519,8 @@ module.exports = (grunt) ->
     "rev"
     "usemin"
     "replace"
+    "coffee:build"
+    "clean:coffee"
     "compress"
   ]
 

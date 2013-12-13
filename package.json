@@ -57,14 +57,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "Cengizism/angular-seed-requirejs"
+    "url": "askcs/standby-chrome-extension"
   },
   "scripts": {
     "test": "grunt test"
   },
   "licenses": [
     {
-      "type": "BSD"
+      "type": "MIT"
     }
   ]
 }
