@@ -1,1 +1,0 @@
-### StandBy Chrome Extension
