@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+dist
+.tmp
+.sass-cache
+app/vendors
+libpeerconnection.log
+.idea
+test/tests
