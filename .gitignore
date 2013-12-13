@@ -6,4 +6,5 @@ dist
 app/vendors
 libpeerconnection.log
 .idea
+idea
 test/tests

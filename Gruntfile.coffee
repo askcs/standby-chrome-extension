@@ -504,6 +504,7 @@ module.exports = (grunt) ->
     "rev"
     "usemin"
     "replace"
+    "compress"
   ]
 
 
